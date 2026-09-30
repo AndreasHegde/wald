@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Lindner | Zertifizierte Waldführerin & Naturpädagogin</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            50: '#f2f7f3',
+                            100: '#e1ede3',
+                            200: '#c5dcc9',
+                            300: '#9ec2a4',
+                            400: '#72a27b',
+                            500: '#51855b',
+                            600: '#3c6b45',
+                            700: '#315438',
+                            800: '#28432f',
+                            900: '#1e3022',
+                            950: '#101c13',
+                        },
+                        earth: {
+                            50: '#fbf9f5',
+                            100: '#f5efded',
+                            200: '#e8dbbe',
+                            300: '#d8c298',
+                            400: '#c4a470',
+                            500: '#b18950',
+                            600: '#9d7042',
+                            700: '#7e5637',
+                            800: '#674732',
+                            900: '#543b2c',
+                        },
+                        moss: '#8da47e',
+                        sunlight: '#f7edda'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(16, 28, 19, 0.4) 0%, rgba(16, 28, 19, 0.75) 100%);
+        }
+        .leaf-pattern {
+            background-color: #f2f7f3;
+            background-image: radial-gradient(#3c6b45 0.5px, transparent 0.5px), radial-gradient(#3c6b45 0.5px, #f2f7f3 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0,10px 10px;
+            background-opacity: 0.05;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #9ec2a4;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #51855b;
+        }
+    </style>
+</head>
+<body class="bg-forest-50 text-gray-800 font-sans antialiased selection:bg-forest-200 selection:text-forest-900">
+
+    <!-- Navigation Header -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between bg-white/90 backdrop-blur-md px-6 py-3 rounded-full shadow-sm border border-forest-100">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-forest-700 text-white flex items-center justify-center shadow-md group-hover:bg-forest-600 transition-colors">
+                    <i class="fa-solid font-bold fa-tree text-lg text-emerald-200"></i>
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-lg text-forest-900 block leading-none">Maria Lindner</span>
+                    <span class="text-xs text-forest-600 tracking-wider font-medium uppercase block">Waldführerin</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-forest-900">
+                <a href="#ueber-mich" class="hover:text-forest-600 transition-colors">Über mich</a>
+                <a href="#fuehrungen" class="hover:text-forest-600 transition-colors">Führungen</a>
+                <a href="#jahreszeiten" class="hover:text-forest-600 transition-colors">Waldkalender</a>
+                <a href="#quiz" class="hover:text-forest-600 transition-colors">Tour-Finder</a>
+                <a href="#stimmen" class="hover:text-forest-600 transition-colors">Erfahrungen</a>
+                <a href="#faq" class="hover:text-forest-600 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="#kontakt" class="px-5 py-2.5 bg-forest-700 hover:bg-forest-800 text-white text-sm font-semibold rounded-full shadow-sm hover:shadow transition-all duration-200 flex items-center gap-2">
+                    <i class="fa-regular fa-calendar-check"></i> Tour buchen
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-forest-900 focus:outline-none p-2" aria-label="Menü öffnen">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto mt-2 bg-white rounded-2xl shadow-xl p-6 border border-forest-100 transition-all">
+            <nav class="flex flex-col space-y-4 text-base font-medium text-forest-900">
+                <a href="#ueber-mich" class="mobile-link py-2 border-b border-gray-100">Über mich</a>
+                <a href="#fuehrungen" class="mobile-link py-2 border-b border-gray-100">Führungen & Angebote</a>
+                <a href="#jahreszeiten" class="mobile-link py-2 border-b border-gray-100">Jahreszeiten-Kalender</a>
+                <a href="#quiz" class="mobile-link py-2 border-b border-gray-100">Interaktiver Tour-Finder</a>
+                <a href="#stimmen" class="mobile-link py-2 border-b border-gray-100">Teilnehmerstimmen</a>
+                <a href="#faq" class="mobile-link py-2 border-b border-gray-100">FAQ</a>
+                <a href="#kontakt" class="mobile-link mt-2 text-center py-3 bg-forest-700 text-white font-semibold rounded-xl">
+                    <i class="fa-regular fa-calendar-check mr-2"></i> Tour anfragen
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-forest-950">
+        <!-- Background Vector Graphic with Overlay -->
+        <div class="absolute inset-0 z-0 opacity-40 flex items-center justify-center">
+            <svg class="w-full h-full object-cover" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1200" height="800" fill="#101c13"/>
+                <!-- Sunbeam / Mist Rays -->
+                <path d="M600 -100 L400 800 L800 800 Z" fill="#72a27b" opacity="0.15"/>
+                <path d="M600 -100 L100 800 L300 800 Z" fill="#9ec2a4" opacity="0.1"/>
+                <path d="M600 -100 L900 800 L1100 800 Z" fill="#9ec2a4" opacity="0.1"/>
+                <!-- Distant Forest Silhouettes -->
+                <path d="M0 800 L0 500 L80 400 L160 520 L240 430 L320 540 L400 380 L480 500 L560 420 L640 530 L720 390 L800 510 L880 410 L960 530 L1040 440 L1120 520 L1200 450 L1200 800 Z" fill="#1e3022"/>
+                <path d="M0 800 L0 580 L100 480 L180 590 L280 460 L380 570 L480 450 L580 580 L680 470 L780 590 L880 480 L980 580 L1080 490 L1200 560 L1200 800 Z" fill="#28432f"/>
+                <!-- Foreground Trees -->
+                <path d="M0 800 L0 640 L120 510 L220 650 L350 490 L480 660 L620 520 L750 670 L890 530 L1020 660 L1150 540 L1200 600 L1200 800 Z" fill="#3c6b45"/>
+            </svg>
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto text-center text-white space-y-8 mt-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-emerald-100 text-xs sm:text-sm font-medium tracking-wide">
+                <i class="fa-solid fa-leaf text-emerald-400"></i> Zertifizierte Natur- & Waldführerin
+            </div>
+
+            <!-- Title -->
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-white drop-shadow-sm">
+                Der Wald wartet auf dich.<br class="hidden sm:block">
+                <span class="italic font-normal text-emerald-200">Achtsam. Lebendig. Unvergesslich.</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="max-w-2xl mx-auto text-base sm:text-xl text-forest-100 font-light leading-relaxed">
+                Tauche ein in das grüne Herz der Natur. Entdecke entschleunigendes Waldbaden, verzaubernde Wildkräuter-Wanderungen & Naturabenteuer im heimischen Forst.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#fuehrungen" class="w-full sm:w-auto px-8 py-4 bg-forest-600 hover:bg-forest-500 text-white font-semibold rounded-full shadow-lg hover:shadow-emerald-900/30 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                    <span>Führungen entdecken</span>
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+                <a href="#quiz" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-compass text-emerald-300"></i>
+                    <span>Welche Tour passt zu mir?</span>
+                </a>
+            </div>
+
+            <!-- Highlights Bar -->
+            <div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+                <div class="bg-black/30 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+                    <p class="text-2xl font-bold font-serif text-emerald-300">100%</p>
+                    <p class="text-xs text-gray-300 mt-1">Naturverbundenheit & Entschleunigung</p>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+                    <p class="text-2xl font-bold font-serif text-emerald-300">Max. 12</p>
+                    <p class="text-xs text-gray-300 mt-1">Teilnehmer für kleine Gruppen</p>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+                    <p class="text-2xl font-bold font-serif text-emerald-300">Shinrin-Yoku</p>
+                    <p class="text-xs text-gray-300 mt-1">Zertifiziertes Waldbaden</p>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+                    <p class="text-2xl font-bold font-serif text-emerald-300">Ganzjährig</p>
+                    <p class="text-xs text-gray-300 mt-1">Individuelle Saisontouren</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 animate-bounce hidden sm:block">
+            <a href="#ueber-mich" aria-label="Nach unten scrollen">
+                <i class="fa-solid fa-chevron-down text-xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Über mich Section -->
+    <section id="ueber-mich" class="py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Profile Image & Badge -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Main Frame SVG Portrait Illustration -->
+                        <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-forest-800 flex items-center justify-center relative">
+                            <svg class="w-full h-full" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="400" height="500" fill="#28432f"/>
+                                <circle cx="200" cy="180" r="140" fill="#3c6b45" opacity="0.6"/>
+                                <path d="M50 500 C 80 380, 120 330, 200 330 C 280 330, 320 380, 350 500 Z" fill="#51855b"/>
+                                <circle cx="200" cy="210" r="75" fill="#f5efde"/>
+                                <!-- Forest Guide Cap & Hair Details -->
+                                <path d="M125 195 C 125 125, 275 125, 275 195 Z" fill="#674732"/>
+                                <path d="M110 190 Q 200 150 290 190 Q 200 170 110 190 Z" fill="#315438"/>
+                                <!-- Tree Leaf Emblem -->
+                                <path d="M200 400 L190 430 L200 420 L210 430 Z" fill="#9ec2a4"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Floating Badge 1 -->
+                        <div class="absolute -bottom-6 -right-4 sm:right-4 bg-forest-900 text-white p-5 rounded-2xl shadow-xl max-w-xs flex items-center gap-4 border border-forest-700">
+                            <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <p class="font-serif font-bold text-sm">Zertifizierte Naturpädagogin</p>
+                                <p class="text-xs text-forest-200 mt-0.5">Staatlich geprüfte Waldführerin</p>
+                            </div>
+                        </div>
+
+                        <!-- Accent background box -->
+                        <div class="absolute -z-10 -top-6 -left-6 w-full h-full bg-forest-100 rounded-3xl"></div>
+                    </div>
+                </div>
+
+                <!-- Right: Bio Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-100 text-forest-800 text-xs font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-tree"></i> Deine Begleiterin im Grün
+                    </div>
+                    
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-950 leading-tight">
+                        „Im Wald finden wir nicht nur Ruhe, sondern schlagen wieder Wurzeln.“
+                    </h2>
+
+                    <p class="text-gray-600 text-base sm:text-lg leading-relaxed">
+                        Hallo, ich bin <strong class="text-forest-900">Maria Lindner</strong>. Schon als Kind verbrachte ich jede freie Minute im moosigen Dickicht unserer heimischen Wälder. Was damals als Neugier begann, entwickelte sich zu meiner Berufung: Menschen den Wald mit allen Sinnen erfahrbar zu machen.
+                    </p>
+
+                    <p class="text-gray-600 leading-relaxed">
+                        Seit über 10 Jahren führe ich Gruppen, Familien und Suchende durch intakte Ökosysteme. Ob beim achtsamen Waldbaden, dem Bestimmen feiner Heilkräuter oder beim Staunen über verborgene Tierspuren – mein Ziel ist es, Faszination für unsere Natur zu wecken und eine nachhaltige Verbindung herzustellen.
+                    </p>
+
+                    <!-- Core Values / Highlights -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                        <div class="p-4 rounded-2xl bg-forest-50 border border-forest-100">
+                            <i class="fa-solid fa-spa text-forest-600 text-2xl mb-2 block"></i>
+                            <h3 class="font-bold text-forest-900 text-sm">Shinrin-Yoku</h3>
+                            <p class="text-xs text-gray-600 mt-1">Achtsamkeit & Stressabbau durch Waldatmung</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-forest-50 border border-forest-100">
+                            <i class="fa-solid fa-seedling text-forest-600 text-2xl mb-2 block"></i>
+                            <h3 class="font-bold text-forest-900 text-sm">Wildkräuter</h3>
+                            <p class="text-xs text-gray-600 mt-1">Naturheilkunde & essbare Schätze am Wegesrand</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-forest-50 border border-forest-100">
+                            <i class="fa-solid fa-campground text-forest-600 text-2xl mb-2 block"></i>
+                            <h3 class="font-bold text-forest-900 text-sm">Naturpädagogik</h3>
+                            <p class="text-xs text-gray-600 mt-1">Spielerisches Lernen für Groß & Klein</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex items-center gap-6">
+                        <a href="#kontakt" class="px-6 py-3 bg-forest-700 hover:bg-forest-800 text-white font-semibold rounded-full shadow transition-all flex items-center gap-2">
+                            <span>Maria kontaktieren</span>
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-forest-100 text-forest-800 flex items-center justify-center font-serif font-bold">
+                                ML
+                            </div>
+                            <div class="text-xs">
+                                <p class="font-bold text-forest-900">Maria Lindner</p>
+                                <p class="text-gray-500">Ihre Waldführerin vor Ort</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Führungen & Angebote Section -->
+    <section id="fuehrungen" class="py-20 px-4 sm:px-6 lg:px-8 bg-forest-50/70 border-t border-b border-forest-100 relative">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-200 text-forest-900 text-xs font-semibold tracking-wider uppercase">
+                    <i class="fa-solid fa-compass"></i> Angebote & Erlebnisse
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-forest-950">
+                    Finde deine Auszeit im Grünen
+                </h2>
+                <p class="text-gray-600 text-base sm:text-lg">
+                    Ob sanfte Entspannung, spannende Spurensuche für Familien oder fundiertes Pflanzenwissen – wähle das passende Waldformat für dich.
+                </p>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-2 pt-6" id="tour-filter-buttons">
+                    <button data-filter="all" class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-forest-700 text-white shadow-sm">
+                        Alle Führungen
+                    </button>
+                    <button data-filter="waldbaden" class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-white text-forest-800 hover:bg-forest-100 border border-forest-200">
+                        <i class="fa-solid fa-spa mr-1 text-xs"></i> Waldbaden
+                    </button>
+                    <button data-filter="familien" class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-white text-forest-800 hover:bg-forest-100 border border-forest-200">
+                        <i class="fa-solid fa-child-reaching mr-1 text-xs"></i> Kinder & Familien
+                    </button>
+                    <button data-filter="kraeuter" class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-white text-forest-800 hover:bg-forest-100 border border-forest-200">
+                        <i class="fa-solid fa-seedling mr-1 text-xs"></i> Kräuter & Wissen
+                    </button>
+                    <button data-filter="special" class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-white text-forest-800 hover:bg-forest-100 border border-forest-200">
+                        <i class="fa-solid fa-moon mr-1 text-xs"></i> Nacht & Events
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tour Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="tours-grid">
+                
+                <!-- Card 1: Shinrin-Yoku Waldbaden -->
+                <div class="tour-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-forest-100 flex flex-col" data-category="waldbaden">
+                    <div class="relative h-56 bg-forest-800 flex items-center justify-center overflow-hidden">
+                        <svg class="w-full h-full object-cover" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="250" fill="#1e3022"/>
+                            <circle cx="200" cy="100" r="80" fill="#3c6b45" opacity="0.5"/>
+                            <path d="M-20 250 L80 120 L180 250 Z" fill="#28432f"/>
+                            <path d="M120 250 L220 100 L320 250 Z" fill="#315438"/>
+                            <path d="M240 250 L330 130 L420 250 Z" fill="#51855b"/>
+                            <circle cx="200" cy="90" r="6" fill="#a7f3d0" opacity="0.8"/>
+                        </svg>
+                        <span class="absolute top-4 left-4 bg-emerald-900/80 backdrop-blur-md text-emerald-100 text-xs font-semibold px-3 py-1 rounded-full">
+                            Klassiker
+                        </span>
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-forest-900 text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm">
+                            <i class="fa-regular fa-clock mr-1"></i> 2,5 Stunden
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-forest-600 font-medium mb-2">
+                                <span><i class="fa-solid fa-user-group mr-1"></i> Max. 10 Personen</span>
+                                <span><i class="fa-solid fa-location-dot mr-1"></i> Buchenwald-Forst</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-forest-950 mb-2">Achtsames Waldbaden (Shinrin-Yoku)</h3>
+                            <p class="text-gray-600 text-sm line-clamp-3">
+                                Lass den Alltag hinter dir. Durch gezielte Atem- und Wahrnehmungsübungen senken wir das Stresshormon Cortisol und stärken dein Immunsystem mit den Terpenen der Waldluft.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-500 block">Preis pro Person</span>
+                                <span class="text-lg font-bold text-forest-900">39,00 €</span>
+                            </div>
+                            <button onclick="openBookingModal('Achtsames Waldbaden (Shinrin-Yoku)')" class="px-4 py-2 bg-forest-700 hover:bg-forest-800 text-white text-sm font-semibold rounded-xl transition-colors">
+                                Anfragen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Wildkräuter & Heilpflanzen -->
+                <div class="tour-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-forest-100 flex flex-col" data-category="kraeuter">
+                    <div class="relative h-56 bg-amber-950 flex items-center justify-center overflow-hidden">
+                        <svg class="w-full h-full object-cover" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="250" fill="#28432f"/>
+                            <path d="M200 220 Q 180 120 120 70 Q 190 100 200 220 Z" fill="#72a27b"/>
+                            <path d="M200 220 Q 220 110 280 60 Q 210 90 200 220 Z" fill="#9ec2a4"/>
+                            <circle cx="120" cy="65" r="12" fill="#fef08a" opacity="0.9"/>
+                            <circle cx="280" cy="55" r="10" fill="#fef08a" opacity="0.9"/>
+                        </svg>
+                        <span class="absolute top-4 left-4 bg-amber-800/80 backdrop-blur-md text-amber-100 text-xs font-semibold px-3 py-1 rounded-full">
+                            Beliebt im Frühling & Sommer
+                        </span>
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-forest-900 text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm">
+                            <i class="fa-regular fa-clock mr-1"></i> 3,0 Stunden
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-forest-600 font-medium mb-2">
+                                <span><i class="fa-solid fa-basket-shopping mr-1"></i> Inkl. Kostprobe</span>
+                                <span><i class="fa-solid fa-location-dot mr-1"></i> Kräuter-Wiese & Waldrand</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-forest-950 mb-2">Wildkräuter & Waldapotheke</h3>
+                            <p class="text-gray-600 text-sm line-clamp-3">
+                                Entdecke essbare Schätze, heilende Baumharze und alte Volksmedizin. Wir sammeln gemeinsam Wildkräuter und bereiten im Anschluss ein frisches Wald-Teegetränk zu.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-500 block">Preis pro Person</span>
+                                <span class="text-lg font-bold text-forest-900">45,00 €</span>
+                            </div>
+                            <button onclick="openBookingModal('Wildkräuter & Waldapotheke')" class="px-4 py-2 bg-forest-700 hover:bg-forest-800 text-white text-sm font-semibold rounded-xl transition-colors">
+                                Anfragen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Kinder & Familien Waldabenteuer -->
+                <div class="tour-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-forest-100 flex flex-col" data-category="familien">
+                    <div class="relative h-56 bg-emerald-950 flex items-center justify-center overflow-hidden">
+                        <svg class="w-full h-full object-cover" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="250" fill="#1e3022"/>
+                            <!-- Footprint traces -->
+                            <ellipse cx="140" cy="180" rx="14" ry="20" fill="#9ec2a4" opacity="0.6"/>
+                            <ellipse cx="180" cy="130" rx="14" ry="20" fill="#9ec2a4" opacity="0.6"/>
+                            <ellipse cx="230" cy="90" rx="14" ry="20" fill="#9ec2a4" opacity="0.6"/>
+                            <path d="M300 250 L350 150 L400 250 Z" fill="#51855b"/>
+                        </svg>
+                        <span class="absolute top-4 left-4 bg-emerald-700/80 backdrop-blur-md text-emerald-100 text-xs font-semibold px-3 py-1 rounded-full">
+                            Für Familien & Kids
+                        </span>
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-forest-900 text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm">
+                            <i class="fa-regular fa-clock mr-1"></i> 2,0 Stunden
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-forest-600 font-medium mb-2">
+                                <span><i class="fa-solid fa-magnifying-glass mr-1"></i> Spurensucher</span>
+                                <span><i class="fa-solid fa-location-dot mr-1"></i> Erlebnis-Pfad</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-forest-950 mb-2">Waldläufer-Abenteuer für Familien</h3>
+                            <p class="text-gray-600 text-sm line-clamp-3">
+                                Ein spielerisches Abenteuer mit Tierspuren-Lesen, Hütte-Bauen aus Totholz, Becherlupe und kleinen Natur-Rätseln. Perfekt für neugierige Kinder und Eltern.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-500 block">Familienkarte (2+2)</span>
+                                <span class="text-lg font-bold text-forest-900">65,00 €</span>
+                            </div>
+                            <button onclick="openBookingModal('Waldläufer-Abenteuer für Familien')" class="px-4 py-2 bg-forest-700 hover:bg-forest-800 text-white text-sm font-semibold rounded-xl transition-colors">
+                                Anfragen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Dämmerungs- & Nachtwanderung -->
+                <div class="tour-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-forest-100 flex flex-col" data-category="special">
+                    <div class="relative h-56 bg-indigo-950 flex items-center justify-center overflow-hidden">
+                        <svg class="w-full h-full object-cover" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="250" fill="#0b132b"/>
+                            <path d="M320 60 A 30 30 0 0 0 290 100 A 30 30 0 1 1 320 60 Z" fill="#fef08a"/>
+                            <path d="M0 250 L100 140 L200 250 Z" fill="#1c2541"/>
+                            <path d="M150 250 L250 110 L350 250 Z" fill="#3a506b"/>
+                        </svg>
+                        <span class="absolute top-4 left-4 bg-indigo-950/80 backdrop-blur-md text-indigo-100 text-xs font-semibold px-3 py-1 rounded-full">
+                            Besonderes Erlebnis
+                        </span>
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-forest-900 text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm">
+                            <i class="fa-regular fa-clock mr-1"></i> 2,5 Stunden
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-forest-600 font-medium mb-2">
+                                <span><i class="fa-solid fa-owl mr-1"></i> Nachtaktive Tiere</span>
+                                <span><i class="fa-solid fa-location-dot mr-1"></i> Eulen-Revier</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-forest-950 mb-2">Geheimnisvolle Dämmerungs-Tour</h3>
+                            <p class="text-gray-600 text-sm line-clamp-3">
+                                Wenn der Wald erwacht: Erlebe den Übergang von Tag zu Nacht. Wir lauschen Waldkäuzen, beobachten Fledermäuse und schärfen unsere Sinne ohne künstliches Licht.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-500 block">Preis pro Person</span>
+                                <span class="text-lg font-bold text-forest-900">42,00 €</span>
+                            </div>
+                            <button onclick="openBookingModal('Geheimnisvolle Dämmerungs-Tour')" class="px-4 py-2 bg-forest-700 hover:bg-forest-800 text-white text-sm font-semibold rounded-xl transition-colors">
+                                Anfragen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Jahreszeiten-Wanderung -->
+                <div class="tour-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-forest-100 flex flex-col" data-category="kraeuter">
+                    <div class="relative h-56 bg-orange-950 flex items-center justify-center overflow-hidden">
+                        <svg class="w-full h-full object-cover" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="250" fill="#431407"/>
+                            <path d="M0 250 L120 130 L220 250 Z" fill="#9a3412"/>
+                            <path d="M150 250 L260 100 L370 250 Z" fill="#c2410c"/>
+                            <circle cx="320" cy="70" r="35" fill="#f97316" opacity="0.4"/>
+                        </svg>
+                        <span class="absolute top-4 left-4 bg-amber-900/80 backdrop-blur-md text-amber-100 text-xs font-semibold px-3 py-1 rounded-full">
+                            Saisonal
+                        </span>
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-forest-900 text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm">
+                            <i class="fa-regular fa-clock mr-1"></i> 3,5 Stunden
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-forest-600 font-medium mb-2">
+                                <span><i class="fa-solid fa-tree mr-1"></i> Ökosystem-Wissen</span>
+                                <span><i class="fa-solid fa-location-dot mr-1"></i> Naturpark Pfade</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-forest-950 mb-2">Der Wald im Wandel der Jahreszeiten</h3>
+                            <p class="text-gray-600 text-sm line-clamp-3">
+                                Erfahre hautnah, wie Bäume miteinander kommunizieren, wie sich Tiere vorbereiten und wie der Wald als Klimaschützer funktioniert.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-500 block">Preis pro Person</span>
+                                <span class="text-lg font-bold text-forest-900">35,00 €</span>
+                            </div>
+                            <button onclick="openBookingModal('Der Wald im Wandel der Jahreszeiten')" class="px-4 py-2 bg-forest-700 hover:bg-forest-800 text-white text-sm font-semibold rounded-xl transition-colors">
+                                Anfragen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Teamevent & Firmen-Auszeit -->
+                <div class="tour-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-forest-100 flex flex-col" data-category="special">
+                    <div class="relative h-56 bg-stone-900 flex items-center justify-center overflow-hidden">
+                        <svg class="w-full h-full object-cover" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="250" fill="#1c1917"/>
+                            <path d="M80 250 L180 120 L280 250 Z" fill="#292524"/>
+                            <path d="M220 250 L300 150 L380 250 Z" fill="#44403c"/>
+                            <circle cx="200" cy="180" r="50" fill="#a8a29e" opacity="0.2"/>
+                        </svg>
+                        <span class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md text-emerald-100 text-xs font-semibold px-3 py-1 rounded-full">
+                            Firmen & Gruppen
+                        </span>
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-forest-900 text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm">
+                            <i class="fa-regular fa-clock mr-1"></i> Individuell
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-forest-600 font-medium mb-2">
+                                <span><i class="fa-solid fa-briefcase mr-1"></i> Teambuilding & Resilienz</span>
+                                <span><i class="fa-solid fa-location-dot mr-1"></i> Wunsch-Standort</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-forest-950 mb-2">Firmen-Resilienz & Teambuilding</h3>
+                            <p class="text-gray-600 text-sm line-clamp-3">
+                                Raus aus dem Büro, rein in die Natur. Stärkt das Wir-Gefühl und die psychische Gesundheit im Team durch angeleitete Übungen unter freiem Himmel.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-500 block">Individuelles Angebot</span>
+                                <span class="text-lg font-bold text-forest-900">Auf Anfrage</span>
+                            </div>
+                            <button onclick="openBookingModal('Firmen-Resilienz & Teambuilding')" class="px-4 py-2 bg-forest-700 hover:bg-forest-800 text-white text-sm font-semibold rounded-xl transition-colors">
+                                Anfragen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interaktiver Tour-Finder (Quiz) Section -->
+    <section id="quiz" class="py-20 px-4 sm:px-6 lg:px-8 bg-forest-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 leaf-pattern"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            
+            <div class="text-center space-y-4 mb-10">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800/80 text-emerald-200 text-xs font-semibold tracking-wider uppercase border border-emerald-700">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Interaktiver Assistent
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+                    Welche Waldführung passt perfekt zu dir?
+                </h2>
+                <p class="text-forest-200 text-sm sm:text-base max-w-xl mx-auto">
+                    Beantworte 3 kurze Fragen und erhalte direkt eine maßgeschneiderte Empfehlung für deine nächste Waldzeit.
+                </p>
+            </div>
+
+            <!-- Quiz Box -->
+            <div class="bg-forest-950/80 border border-forest-700/60 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-md" id="quiz-container">
+                
+                <!-- Step 1 -->
+                <div id="quiz-step-1" class="quiz-step space-y-6">
+                    <div class="flex items-center justify-between text-xs text-forest-300 font-semibold tracking-wider uppercase">
+                        <span>Frage 1 von 3</span>
+                        <span>Hauptziel</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-serif font-semibold text-white">Was möchtest du im Wald primär erleben?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <button onclick="selectQuizAnswer('goal', 'entspannung', 2)" class="p-5 rounded-2xl bg-forest-900 border border-forest-700 hover:border-emerald-400 text-left transition-all group">
+                            <i class="fa-solid fa-spa text-2xl text-emerald-400 mb-3 block group-hover:scale-110 transition-transform"></i>
+                            <span class="font-semibold block text-white">Entspannung & Stressabbau</span>
+                            <span class="text-xs text-forest-300 mt-1 block">Achtsamkeit, tiefes Durchatmen und Ruhe.</span>
+                        </button>
+                        <button onclick="selectQuizAnswer('goal', 'wissen', 2)" class="p-5 rounded-2xl bg-forest-900 border border-forest-700 hover:border-emerald-400 text-left transition-all group">
+                            <i class="fa-solid fa-book-open-reader text-2xl text-emerald-400 mb-3 block group-hover:scale-110 transition-transform"></i>
+                            <span class="font-semibold block text-white">Wissen & Pflanzenkunde</span>
+                            <span class="text-xs text-forest-300 mt-1 block">Kräuter kennenlernen & Ökosystem verstehen.</span>
+                        </button>
+                        <button onclick="selectQuizAnswer('goal', 'abenteuer', 2)" class="p-5 rounded-2xl bg-forest-900 border border-forest-700 hover:border-emerald-400 text-left transition-all group">
+                            <i class="fa-solid fa-compass text-2xl text-emerald-400 mb-3 block group-hover:scale-110 transition-transform"></i>
+                            <span class="font-semibold block text-white">Abenteuer & Naturerlebnis</span>
+                            <span class="text-xs text-forest-300 mt-1 block">Spurensuche, Spaß für Kinder oder Nachtwandern.</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div id="quiz-step-2" class="quiz-step hidden space-y-6">
+                    <div class="flex items-center justify-between text-xs text-forest-300 font-semibold tracking-wider uppercase">
+                        <span>Frage 2 von 3</span>
+                        <span>Begleitung</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-serif font-semibold text-white">Mit wem wirst du den Wald besuchen?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <button onclick="selectQuizAnswer('group', 'alleine', 3)" class="p-5 rounded-2xl bg-forest-900 border border-forest-700 hover:border-emerald-400 text-left transition-all group">
+                            <i class="fa-solid fa-user text-2xl text-emerald-400 mb-3 block group-hover:scale-110 transition-transform"></i>
+                            <span class="font-semibold block text-white">Alleine / Für mich</span>
+                            <span class="text-xs text-forest-300 mt-1 block">Zeit nur für dich oder Anschluss an kleine Gruppe.</span>
+                        </button>
+                        <button onclick="selectQuizAnswer('group', 'familie', 3)" class="p-5 rounded-2xl bg-forest-900 border border-forest-700 hover:border-emerald-400 text-left transition-all group">
+                            <i class="fa-solid fa-people-roof text-2xl text-emerald-400 mb-3 block group-hover:scale-110 transition-transform"></i>
+                            <span class="font-semibold block text-white">Mit Kindern / Familie</span>
+                            <span class="text-xs text-forest-300 mt-1 block">Kindgerechte Erkundungen & Verstecke.</span>
+                        </button>
+                        <button onclick="selectQuizAnswer('group', 'team', 3)" class="p-5 rounded-2xl bg-forest-900 border border-forest-700 hover:border-emerald-400 text-left transition-all group">
+                            <i class="fa-solid fa-users text-2xl text-emerald-400 mb-3 block group-hover:scale-110 transition-transform"></i>
+                            <span class="font-semibold block text-white">Mit Freunden oder Kollegen</span>
+                            <span class="text-xs text-forest-300 mt-1 block">Gemeinsames Gruppenerlebnis.</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div id="quiz-step-3" class="quiz-step hidden space-y-6">
+                    <div class="flex items-center justify-between text-xs text-forest-300 font-semibold tracking-wider uppercase">
+                        <span>Frage 3 von 3</span>
+                        <span>Dauer</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-serif font-semibold text-white">Wie viel Zeit möchtest du mitbringen?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <button onclick="finishQuiz('kurz')" class="p-5 rounded-2xl bg-forest-900 border border-forest-700 hover:border-emerald-400 text-left transition-all group">
+                            <i class="fa-regular fa-clock text-2xl text-emerald-400 mb-3 block group-hover:scale-110 transition-transform"></i>
+                            <span class="font-semibold block text-white">Ca. 2 Stunden</span>
+                            <span class="text-xs text-forest-300 mt-1 block">Kompakt & erfrischend.</span>
+                        </button>
+                        <button onclick="finishQuiz('mittel')" class="p-5 rounded-2xl bg-forest-900 border border-forest-700 hover:border-emerald-400 text-left transition-all group">
+                            <i class="fa-solid fa-hourglass-half text-2xl text-emerald-400 mb-3 block group-hover:scale-110 transition-transform"></i>
+                            <span class="font-semibold block text-white">2,5 bis 3 Stunden</span>
+                            <span class="text-xs text-forest-300 mt-1 block">Die ideale Dosis Entschleunigung.</span>
+                        </button>
+                        <button onclick="finishQuiz('lang')" class="p-5 rounded-2xl bg-forest-900 border border-forest-700 hover:border-emerald-400 text-left transition-all group">
+                            <i class="fa-solid fa-mountain-sun text-2xl text-emerald-400 mb-3 block group-hover:scale-110 transition-transform"></i>
+                            <span class="font-semibold block text-white">Halber Tag / Flexibel</span>
+                            <span class="text-xs text-forest-300 mt-1 block">Intensives Eintauchen.</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Result Step -->
+                <div id="quiz-result" class="hidden text-center space-y-6">
+                    <div class="w-16 h-16 bg-emerald-500/20 text-emerald-300 rounded-full flex items-center justify-center mx-auto text-3xl">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-xs text-emerald-300 font-semibold uppercase tracking-wider">Deine beste Übereinstimmung</span>
+                        <h3 id="result-tour-title" class="text-2xl sm:text-3xl font-serif font-bold text-white">Achtsames Waldbaden (Shinrin-Yoku)</h3>
+                        <p id="result-tour-desc" class="text-forest-200 text-sm max-w-lg mx-auto leading-relaxed">
+                            Basierend auf deinen Angaben empfehlen wir dir unser klassisches Waldbaden. Es schenkt dir ideale Entspannung und senkt nachweislich deinen Stresspegel.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                        <button id="result-booking-btn" onclick="openBookingModalFromQuiz()" class="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-forest-950 font-bold rounded-full transition-all shadow-lg">
+                            <i class="fa-regular fa-calendar-check mr-2"></i> Diese Tour jetzt anfragen
+                        </button>
+                        <button onclick="resetQuiz()" class="px-5 py-3 text-forest-300 hover:text-white text-sm font-medium transition-colors">
+                            <i class="fa-solid fa-rotate-left mr-1"></i> Quiz neustarten
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Jahreszeiten-Kalender Section -->
+    <section id="jahreszeiten" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-100 text-forest-800 text-xs font-semibold tracking-wider uppercase mb-3">
+                        <i class="fa-solid fa-calendar-days"></i> Natur im Wandel
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest-950">
+                        Der Wald im Jahreskreis
+                    </h2>
+                </div>
+                <p class="text-gray-600 text-sm sm:text-base max-w-md">
+                    Jede Jahreszeit offenbart eine ganz eigene Faszination im Wald. Klicke dich durch die Monate und erfahre, was uns erwartet.
+                </p>
+            </div>
+
+            <!-- Season Selector Tabs -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" id="season-tabs">
+                <button onclick="switchSeason('fruehling')" id="tab-fruehling" class="season-tab active p-4 rounded-2xl border border-forest-200 bg-forest-700 text-white font-medium text-center transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-seedling text-emerald-300"></i> Frühling
+                </button>
+                <button onclick="switchSeason('sommer')" id="tab-sommer" class="season-tab p-4 rounded-2xl border border-forest-200 bg-forest-50 text-forest-900 font-medium text-center transition-all flex items-center justify-center gap-2 hover:bg-forest-100">
+                    <i class="fa-solid fa-sun text-amber-500"></i> Sommer
+                </button>
+                <button onclick="switchSeason('herbst')" id="tab-herbst" class="season-tab p-4 rounded-2xl border border-forest-200 bg-forest-50 text-forest-900 font-medium text-center transition-all flex items-center justify-center gap-2 hover:bg-forest-100">
+                    <i class="fa-solid fa-leaf text-orange-600"></i> Herbst
+                </button>
+                <button onclick="switchSeason('winter')" id="tab-winter" class="season-tab p-4 rounded-2xl border border-forest-200 bg-forest-50 text-forest-900 font-medium text-center transition-all flex items-center justify-center gap-2 hover:bg-forest-100">
+                    <i class="fa-regular fa-snowflake text-sky-500"></i> Winter
+                </button>
+            </div>
+
+            <!-- Season Content Box -->
+            <div class="bg-forest-50 rounded-3xl p-6 sm:p-10 border border-forest-100 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center" id="season-content">
+                <!-- Text Info -->
+                <div class="lg:col-span-7 space-y-4">
+                    <span id="season-badge" class="px-3 py-1 rounded-full bg-forest-200 text-forest-800 text-xs font-bold uppercase tracking-wider">
+                        März – Mai
+                    </span>
+                    <h3 id="season-title" class="font-serif text-2xl sm:text-3xl font-bold text-forest-950">
+                        Das Erwachen & die junge Bärlauch-Blüte
+                    </h3>
+                    <p id="season-desc" class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        Der Frühling ist die Zeit des Aufbruchs. Die Bäume schlagen aus, das junge Grün versprüht maximale Mengen an Phytonziden und der Waldboden duftet nach frischem Bärlauch und Waldmeister. Optimal für Entgiftungs-Führungen und Wildkräutersammeln.
+                    </p>
+                    <ul id="season-bullets" class="space-y-2 text-sm text-forest-900 pt-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest-600"></i> Frische Fichtenspitzen & Bärlauch erkennen</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest-600"></i> Vogelkonzerte in den frühen Morgenstunden</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest-600"></i> Erste Waldbaden-Einheiten nach der Winterruhe</li>
+                    </ul>
+                </div>
+                <!-- Image -->
+                <div class="lg:col-span-5">
+                    <div class="aspect-square rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-forest-800 flex items-center justify-center p-6 text-white text-center" id="season-img-container">
+                        <div id="season-svg-wrapper" class="w-full h-full flex flex-col items-center justify-center space-y-4">
+                            <i id="season-icon" class="fa-solid fa-seedling text-6xl text-emerald-300"></i>
+                            <p id="season-img-label" class="font-serif text-xl font-semibold">Frühlingserwachen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Teilnehmerstimmen Section -->
+    <section id="stimmen" class="py-20 px-4 sm:px-6 lg:px-8 bg-forest-50/50 relative">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-100 text-forest-800 text-xs font-semibold tracking-wider uppercase">
+                    <i class="fa-solid fa-heart"></i> Kundenstimmen
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest-950">
+                    Was Teilnehmer sagen
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base">
+                    Echte Erfahrungen von Menschen, die mit Maria den Wald neu entdeckt haben.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-forest-100 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="text-amber-400 text-sm flex gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm italic leading-relaxed">
+                            „Das Waldbaden mit Maria war wie ein Reset-Knopf für meinen Kopf. Ich hatte schon lange nicht mehr so tief durchgeatmet. Marias ruhige und wertschätzende Art ist einmalig!“
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gray-100">
+                        <div class="w-11 h-11 rounded-full bg-forest-100 text-forest-800 font-serif font-bold flex items-center justify-center">
+                            SK
+                        </div>
+                        <div>
+                            <p class="font-bold text-forest-900 text-sm">Sabine K.</p>
+                            <p class="text-xs text-gray-500">Teilnehmerin Waldbaden</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-forest-100 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="text-amber-400 text-sm flex gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm italic leading-relaxed">
+                            „Unsere Kinder schwärmen heute noch von der Spurensuche! Maria versteht es hervorragend, Wissen mit Spiel und Abenteuer zu verknüpfen. Absolut empfehlenswert für Familien.“
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gray-100">
+                        <div class="w-11 h-11 rounded-full bg-forest-100 text-forest-800 font-serif font-bold flex items-center justify-center">
+                            MW
+                        </div>
+                        <div>
+                            <p class="font-bold text-forest-900 text-sm">Markus & Familie W.</p>
+                            <p class="text-xs text-gray-500">Familien-Abenteuer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-forest-100 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="text-amber-400 text-sm flex gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm italic leading-relaxed">
+                            „Der Kräuterspaziergang war unglaublich lehrreich. Ich sehe meinen Waldspaziergang vor der Haustür jetzt mit ganz anderen Augen. Der frische Kräutertee am Ende war das Highlight!“
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gray-100">
+                        <div class="w-11 h-11 rounded-full bg-forest-100 text-forest-800 font-serif font-bold flex items-center justify-center">
+                            EL
+                        </div>
+                        <div>
+                            <p class="font-bold text-forest-900 text-sm">Elena L.</p>
+                            <p class="text-xs text-gray-500">Wildkräuter-Wanderung</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-forest-100">
+        <div class="max-w-4xl mx-auto">
+            
+            <div class="text-center space-y-3 mb-12">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-100 text-forest-800 text-xs font-semibold tracking-wider uppercase">
+                    <i class="fa-solid fa-circle-question"></i> Gut zu wissen
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest-950">
+                    Häufig gestellte Fragen
+                </h2>
+            </div>
+
+            <!-- Accordion Items -->
+            <div class="space-y-4" id="faq-accordion">
+                
+                <div class="border border-forest-100 rounded-2xl overflow-hidden transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-serif font-semibold text-lg text-forest-950 flex justify-between items-center bg-forest-50/50 hover:bg-forest-50 transition-colors">
+                        <span>Was passiert bei schlechtem Wetter oder Regen?</span>
+                        <i class="fa-solid fa-chevron-down text-forest-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden p-5 text-gray-600 text-sm bg-white border-t border-forest-100 leading-relaxed">
+                        Ein leichter Sommerregen oder Nebel macht das Walderlebnis oft erst besonders magisch! Wir führen die Touren auch bei leichtem Regen durch (bitte wetterfeste Kleidung mitbringen). Bei Unwetterwarnungen, Gewitter oder Sturm wird die Tour aus Sicherheitsgründen kostenfrei verschoben.
+                    </div>
+                </div>
+
+                <div class="border border-forest-100 rounded-2xl overflow-hidden transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-serif font-semibold text-lg text-forest-950 flex justify-between items-center bg-forest-50/50 hover:bg-forest-50 transition-colors">
+                        <span>Welche Kleidung & Ausrüstung sollte ich mitbringen?</span>
+                        <i class="fa-solid fa-chevron-down text-forest-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden p-5 text-gray-600 text-sm bg-white border-t border-forest-100 leading-relaxed">
+                        Wichtig sind festes Schuhwerk (Wanderschuhe oder gute Turnschuhe) und dem Wetter angepasste Kleidung im Zwiebellook. Im Sommer empfiehlt sich Zeckenschutz und eine kleine Wasserflasche. Eine Unterlage zum Hinsetzen (z. B. ein kleines Sitzkissen) stelle ich bei Bedarf zur Verfügung.
+                    </div>
+                </div>
+
+                <div class="border border-forest-100 rounded-2xl overflow-hidden transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-serif font-semibold text-lg text-forest-950 flex justify-between items-center bg-forest-50/50 hover:bg-forest-50 transition-colors">
+                        <span>Sind die Touren barrierefrei oder für Senioren geeignet?</span>
+                        <i class="fa-solid fa-chevron-down text-forest-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden p-5 text-gray-600 text-sm bg-white border-t border-forest-100 leading-relaxed">
+                        Das Tempo beim Waldbaden und den meisten Führungen ist sehr bewusst und langsam gewählt. Einige Wege sind auch mit Geländekinderwagen oder für gehbeeinträchtigte Personen gut machbar. Gib mir bei der Buchung einfach Bescheid, damit ich die passende Route auswählen kann.
+                    </div>
+                </div>
+
+                <div class="border border-forest-100 rounded-2xl overflow-hidden transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-serif font-semibold text-lg text-forest-950 flex justify-between items-center bg-forest-50/50 hover:bg-forest-50 transition-colors">
+                        <span>Darf mein Hund mit zur Waldführung?</span>
+                        <i class="fa-solid fa-chevron-down text-forest-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden p-5 text-gray-600 text-sm bg-white border-t border-forest-100 leading-relaxed">
+                        Bei offenen Gruppenführungen bitten wir darum, Hunde zu Hause zu lassen, um eine ruhige und ungestörte Gruppenatmosphäre (besonders beim Waldbaden) zu gewährleisten. Bei exklusiven Private- or Familienführungen sind angeleinte Vierbeiner nach Absprache herzlich willkommen.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Kontakt & Buchung Section -->
+    <section id="kontakt" class="py-20 px-4 sm:px-6 lg:px-8 bg-forest-50 border-t border-forest-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Left -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-200 text-forest-900 text-xs font-semibold tracking-wider uppercase mb-3">
+                            <i class="fa-regular fa-envelope"></i> Kontakt
+                        </span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest-950">
+                            Nimm Kontakt mit mir auf
+                        </h2>
+                        <p class="text-gray-600 text-sm sm:text-base mt-2">
+                            Du hast Fragen zu Terminen, individuellen Gruppenbuchungen oder möchtest einen Gutschein verschenken? Schreib mir einfach!
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-forest-700 text-emerald-200 flex items-center justify-center shrink-0 shadow-sm text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-forest-900 text-sm">Treffpunkte & Region</h3>
+                                <p class="text-gray-600 text-sm">Naturpark & Revier Buchenwald<br>Haupttreffpunkt: Parkplatz Forsthaus Waldruh</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-forest-700 text-emerald-200 flex items-center justify-center shrink-0 shadow-sm text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-forest-900 text-sm">Telefon & WhatsApp</h3>
+                                <p class="text-gray-600 text-sm">+49 (0) 175 123 456 78</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-forest-700 text-emerald-200 flex items-center justify-center shrink-0 shadow-sm text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-forest-900 text-sm">E-Mail</h3>
+                                <p class="text-gray-600 text-sm">maria@waldwege-erleben.de</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Voucher Promo Box -->
+                    <div class="p-6 rounded-3xl bg-earth-100 border border-earth-300 text-earth-900 space-y-3">
+                        <div class="flex items-center gap-2 text-earth-800 font-bold text-sm">
+                            <i class="fa-solid fa-gift text-lg"></i>
+                            <span>Geschenkgutschein für Waldzeit</span>
+                        </div>
+                        <p class="text-xs text-earth-800 leading-relaxed">
+                            Verschenke entschleunigende Momente im Wald. Alle Führungen sind auch als gedruckter oder digitaler Gutschein erhältlich.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Contact Form Right -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-forest-100">
+                        <h3 class="font-serif font-bold text-2xl text-forest-950 mb-6">Unverbindliche Anfrage senden</h3>
+                        
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-forest-900 mb-1">Vor- & Nachname *</label>
+                                    <input type="text" required placeholder="z. B. Anna Muster" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-forest-600 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-forest-900 mb-1">E-Mail Adresse *</label>
+                                    <input type="email" required placeholder="anna@beispiel.de" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-forest-600 text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-forest-900 mb-1">Gewünschtes Angebot</label>
+                                    <select id="form-tour-select" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-forest-600 text-sm bg-white">
+                                        <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+                                        <option value="Achtsames Waldbaden (Shinrin-Yoku)">Achtsames Waldbaden (Shinrin-Yoku)</option>
+                                        <option value="Wildkräuter & Waldapotheke">Wildkräuter & Waldapotheke</option>
+                                        <option value="Waldläufer-Abenteuer für Familien">Waldläufer-Abenteuer für Familien</option>
+                                        <option value="Geheimnisvolle Dämmerungs-Tour">Geheimnisvolle Dämmerungs-Tour</option>
+                                        <option value="Der Wald im Wandel der Jahreszeiten">Der Wald im Wandel der Jahreszeiten</option>
+                                        <option value="Firmen-Resilienz & Teambuilding">Firmen-Resilienz & Teambuilding</option>
+                                        <option value="Gutschein-Bestellung">Gutschein-Bestellung</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-forest-900 mb-1">Wunschtermin / Zeitraum</label>
+                                    <input type="text" placeholder="z. B. Nächstes Wochenende" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-forest-600 text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-forest-900 mb-1">Anzahl der Personen</label>
+                                <input type="number" min="1" max="25" value="1" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-forest-600 text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-forest-900 mb-1">Deine Nachricht *</label>
+                                <textarea required rows="4" placeholder="Schreib mir kurz, was du dir wünschst oder welche Fragen du hast..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-forest-600 text-sm"></textarea>
+                            </div>
+
+                            <div class="flex items-start gap-2 pt-2">
+                                <input type="checkbox" id="privacy" required class="mt-1 rounded text-forest-700 focus:ring-forest-600">
+                                <label for="privacy" class="text-xs text-gray-500">
+                                    Ich stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme gemäß Datenschutz zu.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 bg-forest-700 hover:bg-forest-800 text-white font-semibold rounded-xl shadow transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-paper-plane"></i>
+                                <span>Anfrage absenden</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-forest-950 text-forest-200 py-12 px-4 sm:px-6 lg:px-8 border-t border-forest-900">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            
+            <div class="space-y-4 md:col-span-1">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-full bg-emerald-700 text-white flex items-center justify-center">
+                        <i class="fa-solid fa-tree text-emerald-200"></i>
+                    </div>
+                    <span class="font-serif font-bold text-lg text-white">Maria Lindner</span>
+                </div>
+                <p class="text-xs text-forest-300 leading-relaxed">
+                    Zertifizierte Waldführerin & Naturpädagogin. Dein Guide für Entschleunigung, Naturwissen und achtsame Momente im Grünen.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Navigation</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#ueber-mich" class="hover:text-white transition-colors">Über Maria</a></li>
+                    <li><a href="#fuehrungen" class="hover:text-white transition-colors">Führungen & Kurse</a></li>
+                    <li><a href="#jahreszeiten" class="hover:text-white transition-colors">Wald im Jahreskreis</a></li>
+                    <li><a href="#quiz" class="hover:text-white transition-colors">Tour-Finder Quiz</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Angebote</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#fuehrungen" class="hover:text-white transition-colors">Shinrin-Yoku (Waldbaden)</a></li>
+                    <li><a href="#fuehrungen" class="hover:text-white transition-colors">Wildkräuter-Exkursion</a></li>
+                    <li><a href="#fuehrungen" class="hover:text-white transition-colors">Familien-Spurensuche</a></li>
+                    <li><a href="#fuehrungen" class="hover:text-white transition-colors">Firmen-Teamevents</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Verbinden</h4>
+                <div class="flex gap-3 text-lg mb-4">
+                    <a href="#" class="w-9 h-9 rounded-full bg-forest-900 flex items-center justify-center hover:bg-emerald-700 transition-colors text-white" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-forest-900 flex items-center justify-center hover:bg-emerald-700 transition-colors text-white" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-forest-900 flex items-center justify-center hover:bg-emerald-700 transition-colors text-white" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+                <p class="text-xs text-forest-300">
+                    Sitz der Waldführung:<br>Region Naturpark Pfälzerwald / Buchenwald
+                </p>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 border-t border-forest-900 flex flex-col sm:flex-row items-center justify-between text-xs text-forest-400 gap-4">
+            <p>© <span id="current-year">2026</span> Maria Lindner – Alle Rechte vorbehalten.</p>
+            <div class="flex gap-6">
+                <button onclick="openImpressumModal()" class="hover:text-forest-200 focus:outline-none transition-colors">Impressum</button>
+                <button onclick="openDatenschutzModal()" class="hover:text-forest-200 focus:outline-none transition-colors">Datenschutz</button>
+                <a href="#kontakt" class="hover:text-forest-200">AGB & Kontakt</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="fixed bottom-4 left-4 right-4 sm:left-6 sm:max-w-md z-50 bg-white/95 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-forest-200 transition-all duration-300">
+        <div class="flex items-start gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-forest-100 text-forest-700 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-cookie-bite text-xl"></i>
+            </div>
+            <div>
+                <h3 class="font-serif font-bold text-forest-950 text-base">Cookie-Einstellungen</h3>
+                <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+                    Wir nutzen technisch notwendige Cookies sowie optionale Werkzeuge, um dir das beste Natur-Erlebnis auf unserer Website zu bieten.
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-2 pt-2">
+            <button onclick="acceptAllCookies()" class="flex-1 py-2.5 px-4 bg-forest-700 hover:bg-forest-800 text-white text-xs font-semibold rounded-xl transition-colors text-center">
+                Alle akzeptieren
+            </button>
+            <button onclick="acceptEssentialCookies()" class="py-2.5 px-4 bg-forest-100 hover:bg-forest-200 text-forest-900 text-xs font-semibold rounded-xl transition-colors text-center">
+                Nur essenzielle
+            </button>
+        </div>
+    </div>
+
+    <!-- Impressum Modal -->
+    <div id="impressum-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl my-8 max-h-[85vh] flex flex-col border border-forest-100">
+            <button onclick="closeImpressumModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 p-2 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-4 pb-4 border-b border-forest-100 shrink-0">
+                <div class="w-10 h-10 rounded-full bg-forest-100 text-forest-700 flex items-center justify-center">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif font-bold text-2xl text-forest-950">Impressum</h3>
+                    <p class="text-xs text-forest-600">Angaben gemäß § 5 DDG / TMG</p>
+                </div>
+            </div>
+
+            <div class="overflow-y-auto custom-scrollbar space-y-6 text-sm text-gray-700 pr-2">
+                <div>
+                    <h4 class="font-bold text-forest-900 mb-1">Diensteanbieter & Verantwortlicher</h4>
+                    <p>Maria Lindner – Natur- & Waldführung<br>
+                    Hauptstraße 42<br>
+                    55490 Gemünden (Hunsrück)</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-forest-900 mb-1">Kontakt</h4>
+                    <p>Telefon: +49 (0) 175 123 456 78<br>
+                    E-Mail: maria@waldwege-erleben.de<br>
+                    Website: www.waldwege-erleben.de</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-forest-900 mb-1">Berufsbezeichnung & Qualifikation</h4>
+                    <p>Zertifizierte Naturpädagogin & staatlich geprüfte Waldführerin<br>
+                    Aufsichtsbehörde / Zertifizierung: Bundesverband Waldbaden e.V.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-forest-900 mb-1">Umsatzsteuer-ID</h4>
+                    <p>Befreit von der Umsatzsteuer gemäß § 19 UStG (Kleinunternehmerregelung).</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-forest-900 mb-1">Haftung für Inhalte</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-forest-900 mb-1">Haftung für Links</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-forest-100 flex justify-end shrink-0">
+                <button onclick="closeImpressumModal()" class="px-5 py-2 bg-forest-700 text-white rounded-xl text-xs font-semibold hover:bg-forest-800 transition-colors">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Datenschutz Modal -->
+    <div id="datenschutz-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl my-8 max-h-[85vh] flex flex-col border border-forest-100">
+            <button onclick="closeDatenschutzModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 p-2 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-4 pb-4 border-b border-forest-100 shrink-0">
+                <div class="w-10 h-10 rounded-full bg-forest-100 text-forest-700 flex items-center justify-center">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif font-bold text-2xl text-forest-950">Datenschutzerklärung</h3>
+                    <p class="text-xs text-forest-600">Informationen zur Datenverarbeitung nach DSGVO</p>
+                </div>
+            </div>
+
+            <div class="overflow-y-auto custom-scrollbar space-y-6 text-sm text-gray-700 pr-2">
+                <div>
+                    <h4 class="font-bold text-forest-900 mb-1">1. Datenschutz auf einen Blick</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Wir nehmen den Schutz deiner persönlichen Daten sehr ernst. Personenbezogene Daten werden auf dieser Website nur im technisch notwendigen Umfang (z. B. für Kontakttour-Anfragen) erhoben.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-forest-900 mb-1">2. Datenerfassung auf dieser Website</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-2">
+                        <strong>Kontaktformular:</strong> Wenn du uns per Kontaktformular Anfragen zukommen lässt, werden deine Angaben zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+                    </p>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        <strong>Cookies:</strong> Unsere Internetseiten verwenden teilweise sogenannte Cookies. Cookies richten auf deinem Rechner keinen Schaden an und enthalten keine Viren.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-forest-900 mb-1">3. Deine Rechte</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Du hast jederzeit das Recht auf kostenfreie Auskunft über deine gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung oder Löschung dieser Daten.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-forest-100 flex justify-end shrink-0">
+                <button onclick="closeDatenschutzModal()" class="px-5 py-2 bg-forest-700 text-white rounded-xl text-xs font-semibold hover:bg-forest-800 transition-colors">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl animate-fade-in border border-forest-100">
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 p-2 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-forest-100 text-forest-700 flex items-center justify-center">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-forest-950">Tour-Anfrage</h3>
+                    <p id="modal-selected-tour" class="text-xs text-forest-600 font-semibold">Achtsames Waldbaden</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4 pt-2">
+                <div>
+                    <label class="block text-xs font-semibold text-forest-900 mb-1">Dein Name *</label>
+                    <input type="text" required placeholder="Vor- und Nachname" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-forest-600 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-forest-900 mb-1">E-Mail Adresse *</label>
+                    <input type="email" required placeholder="name@beispiel.de" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-forest-600 outline-none">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-forest-900 mb-1">Wunschdatum</label>
+                        <input type="date" required class="w-full px-3 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-forest-600 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-forest-900 mb-1">Personenanzahl</label>
+                        <input type="number" min="1" max="15" value="1" required class="w-full px-3 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-forest-600 outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-forest-900 mb-1">Anmerkungen / Fragen</label>
+                    <textarea rows="2" placeholder="Optionale Wünsche oder Fragen..." class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-forest-600 outline-none"></textarea>
+                </div>
+                
+                <button type="submit" class="w-full py-3 bg-forest-700 hover:bg-forest-800 text-white font-semibold rounded-xl transition-colors shadow">
+                    Unverbindlich anfragen
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification Message Box -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-forest-900 text-white px-6 py-4 rounded-2xl shadow-2xl border border-forest-700 flex items-center gap-3 transition-all duration-300 transform translate-y-4">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+        <div>
+            <p id="toast-title" class="font-bold text-sm">Vielen Dank!</p>
+            <p id="toast-desc" class="text-xs text-forest-200">Deine Nachricht wurde erfolgreich übermittelt.</p>
+        </div>
+    </div>
+
+    <!-- Client JavaScript Logic -->
+    <script>
+        let quizAnswers = {};
+        let recommendedTour = "Achtsames Waldbaden (Shinrin-Yoku)";
+
+        // Cookie Banner Logic
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (consent) {
+                const banner = document.getElementById('cookie-banner');
+                if (banner) banner.classList.add('hidden');
+            }
+        }
+
+        function acceptAllCookies() {
+            localStorage.setItem('cookieConsent', 'all');
+            document.getElementById('cookie-banner').classList.add('hidden');
+            showToast("Cookie-Einstellungen gespeichert", "Vielen Dank! Alle Präferenzen wurden gespeichert.");
+        }
+
+        function acceptEssentialCookies() {
+            localStorage.setItem('cookieConsent', 'essential');
+            document.getElementById('cookie-banner').classList.add('hidden');
+            showToast("Cookie-Einstellungen gespeichert", "Es werden nur technisch essenzielle Cookies verwendet.");
+        }
+
+        // Legal Modals Logic
+        function openImpressumModal() {
+            document.getElementById('impressum-modal').classList.remove('hidden');
+        }
+
+        function closeImpressumModal() {
+            document.getElementById('impressum-modal').classList.add('hidden');
+        }
+
+        function openDatenschutzModal() {
+            document.getElementById('datenschutz-modal').classList.remove('hidden');
+        }
+
+        function closeDatenschutzModal() {
+            document.getElementById('datenschutz-modal').classList.add('hidden');
+        }
+
+        // Initialize Cookie Consent check on load
+        window.addEventListener('DOMContentLoaded', checkCookieConsent);
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Filter Tours Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const tourCards = document.querySelectorAll('.tour-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-forest-700', 'text-white', 'shadow-sm');
+                    b.classList.add('bg-white', 'text-forest-800', 'border', 'border-forest-200');
+                });
+
+                btn.classList.remove('bg-white', 'text-forest-800', 'border', 'border-forest-200');
+                btn.classList.add('bg-forest-700', 'text-white', 'shadow-sm');
+
+                const filter = btn.getAttribute('data-filter');
+
+                tourCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Interactive Quiz Logic
+        function selectQuizAnswer(key, value, nextStep) {
+            quizAnswers[key] = value;
+            document.querySelectorAll('.quiz-step').forEach(step => step.classList.add('hidden'));
+            document.getElementById(`quiz-step-${nextStep}`).classList.remove('hidden');
+        }
+
+        function finishQuiz(duration) {
+            quizAnswers['duration'] = duration;
+            document.querySelectorAll('.quiz-step').forEach(step => step.classList.add('hidden'));
+
+            let title = "Achtsames Waldbaden (Shinrin-Yoku)";
+            let desc = "Perfekt zum Durchatmen, Entschleunigen und Kraft tanken. Mit achtsamen Übungen und geführten Meditationen im tiefen Grün.";
+
+            if (quizAnswers.goal === 'wissen') {
+                title = "Wildkräuter & Waldapotheke";
+                desc = "Entdecke essbare Pflanzenschätze, altüberlieferte Heilmittel und bereite leckeren Naturtee vor.";
+            } else if (quizAnswers.group === 'familie' || quizAnswers.goal === 'abenteuer') {
+                title = "Waldläufer-Abenteuer für Familien";
+                desc = "Ein erlebnisreicher Ausflug mit Tierspuren-Lesen, Hütte-Bauen und spannenden Entdeckungen für Jung und Alt.";
+            } else if (quizAnswers.group === 'team') {
+                title = "Firmen-Resilienz & Teambuilding";
+                desc = "Gemeinsam raus in die Natur – stärkt den Zusammenhalt und senkt den Alltagsstress nachhaltig.";
+            }
+
+            recommendedTour = title;
+            document.getElementById('result-tour-title').textContent = title;
+            document.getElementById('result-tour-desc').textContent = desc;
+            document.getElementById('quiz-result').classList.remove('hidden');
+        }
+
+        function resetQuiz() {
+            quizAnswers = {};
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.querySelectorAll('.quiz-step').forEach(step => step.classList.add('hidden'));
+            document.getElementById('quiz-step-1').classList.remove('hidden');
+        }
+
+        function openBookingModalFromQuiz() {
+            openBookingModal(recommendedTour);
+        }
+
+        // Seasonal Tabs Data & Switcher
+        const seasonsData = {
+            fruehling: {
+                badge: "März – Mai",
+                title: "Das Erwachen & die junge Bärlauch-Blüte",
+                desc: "Der Frühling ist die Zeit des Aufbruchs. Die Bäume schlagen aus, das junge Grün versprüht maximale Mengen an Phytonziden und der Waldboden duftet nach frischem Bärlauch und Waldmeister. Optimal für Entgiftungs-Führungen und Wildkräutersammeln.",
+                bullets: [
+                    "Frische Fichtenspitzen & Bärlauch erkennen",
+                    "Vogelkonzerte in den frühen Morgenstunden",
+                    "Erste Waldbaden-Einheiten nach der Winterruhe"
+                ],
+                icon: "fa-seedling",
+                iconColor: "text-emerald-300",
+                label: "Frühlingserwachen"
+            },
+            sommer: {
+                badge: "Juni – August",
+                title: "Dichte Blätterdächer & Kühle Schattenspenden",
+                desc: "Wenn die Stadt glüht, bietet das kühle Mikroklima des Waldes Erholung pur. Wir nutzen die schattigen Buchenhallen für sanfte Abendschwimm-Spaziergänge und erkunden nächtliche Rufe von Waldkäuzen.",
+                bullets: [
+                    "Bis zu 8 Grad kühleres Mikroklima im dichten Forst",
+                    "Aromatischer Duft von warmem Harz und Moos",
+                    "Dämmerungs- & Nachtwanderungen für Eulen-Fans"
+                ],
+                icon: "fa-sun",
+                iconColor: "text-amber-400",
+                label: "Sommerfrische"
+            },
+            herbst: {
+                badge: "September – November",
+                title: "Goldene Farbenpracht & Pilzwissen",
+                desc: "Der Herbst zaubert ein farbenprächtiges Spektakel. Das Knistern des Laubes unter den Füßen lädt zur Einkehr ein. Wir beobachten Eichhörnchen beim Vorräte-Sammeln und entdecken geheimnisvolle Pilzgeflechte.",
+                bullets: [
+                    "Faszination 'Wood Wide Web' und Pilzmyzel",
+                    "Achtsamkeit mit fallenden Blättern & Atemübungen",
+                    "Beobachtung der Natur im Wandel"
+                ],
+                icon: "fa-leaf",
+                iconColor: "text-orange-400",
+                label: "Herbstzauber"
+            },
+            winter: {
+                badge: "Dezember – Februar",
+                title: "Stille, Tierspuren & Magische Entschleunigung",
+                desc: "Im verschneiten oder ruhenden Winterwald herrscht tiefe Stille. Ein idealer Zeitpunkt, um Spuren von Reh und Fuchs im Schnee zu lesen und den eigenen Geist vollkommen zur Ruhe kommen zu lassen.",
+                bullets: [
+                    "Tierspuren-Lesen im Schnee oder auf feuchter Erde",
+                    "Wärmende Wald-Teezeremonie unter Tannen",
+                    "Maximale Stille zur Regeneration"
+                ],
+                icon: "fa-snowflake",
+                iconColor: "text-sky-300",
+                label: "Winterstille"
+            }
+        };
+
+        function switchSeason(seasonKey) {
+            document.querySelectorAll('.season-tab').forEach(tab => {
+                tab.classList.remove('bg-forest-700', 'text-white');
+                tab.classList.add('bg-forest-50', 'text-forest-900');
+            });
+
+            const activeTab = document.getElementById(`tab-${seasonKey}`);
+            activeTab.classList.remove('bg-forest-50', 'text-forest-900');
+            activeTab.classList.add('bg-forest-700', 'text-white');
+
+            const data = seasonsData[seasonKey];
+            document.getElementById('season-badge').textContent = data.badge;
+            document.getElementById('season-title').textContent = data.title;
+            document.getElementById('season-desc').textContent = data.desc;
+
+            const iconElem = document.getElementById('season-icon');
+            iconElem.className = `fa-solid ${data.icon} text-6xl ${data.iconColor}`;
+            document.getElementById('season-img-label').textContent = data.label;
+
+            const bulletsUl = document.getElementById('season-bullets');
+            bulletsUl.innerHTML = data.bullets.map(b => `<li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest-600"></i> ${b}</li>`).join('');
+        }
+
+        // FAQ Accordion Toggle
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('i');
+
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                answer.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Booking Modal Logic
+        function openBookingModal(tourName) {
+            document.getElementById('modal-selected-tour').textContent = tourName || "Allgemeine Tour-Anfrage";
+            document.getElementById('form-tour-select').value = tourName || "Allgemeine Anfrage";
+            document.getElementById('booking-modal').classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+        }
+
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').textContent = title;
+            document.getElementById('toast-desc').textContent = message;
+
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-4');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-4');
+                setTimeout(() => toast.classList.add('hidden'), 300);
+            }, 4000);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast("Anfrage gesendet!", "Maria wird sich innerhalb von 24h bei dir melden.");
+            e.target.reset();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            closeBookingModal();
+            showToast("Buchungsanfrage erhalten!", "Wir haben deine Terminanfrage für die Waldführung aufgenommen.");
+            e.target.reset();
+        }
+
+        // Set Current Year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
